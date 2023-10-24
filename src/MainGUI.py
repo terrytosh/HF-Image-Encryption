@@ -37,6 +37,7 @@ class MainGUI(QMainWindow):
         # Store user action selections from UI radio buttons
         selected_action = ""
         selected_algorithm = ""
+        key = self.password_input.text()
 
         # Handle selected action input
         if self.encrypt_radio_button.isChecked():
@@ -54,3 +55,4 @@ class MainGUI(QMainWindow):
         
 
         print("handle_execute() fucnction called with", selected_action, selected_algorithm)
+        print(key)
