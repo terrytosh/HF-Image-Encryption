@@ -3,7 +3,7 @@ Project Repository for Human Factors Group 13
 
 ## Requirements:
 
-Python - 3.11.4
+Python -  >= 3.11
 
 PyQt5 - 5.19.9
 ```bash
