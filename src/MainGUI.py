@@ -32,7 +32,7 @@ class MainGUI(QMainWindow):
         self.key = ""
     
     def handle_input_file_select(self):
-        print("handle_input_file_select() fucnction called...")
+        # print("handle_input_file_select() fucnction called...")
 
         options = QFileDialog.ReadOnly # Force user to only selected already exisitng files
         file_filter = "Images (*.jpg *.png)" # User can only select .jpg and .png file types
@@ -44,7 +44,7 @@ class MainGUI(QMainWindow):
             self.input_file_label.setText(self.image_file) # Modify label to show path of selected image file
     
     def handle_output_directory_select(self):
-        print("handle_output_directory_select() fucnction called...")
+        # print("handle_output_directory_select() fucnction called...")
 
         options = QFileDialog.ShowDirsOnly # Show only existing user directories
         self.output_directory = QFileDialog.getExistingDirectory(self, "Select Output Directory", options=options)
@@ -75,8 +75,13 @@ class MainGUI(QMainWindow):
             QMessageBox.warning(self, "Error!", "Please fill in all form inputs.")
         else:
             # Handle action
-            print("Valid user input. Proceed...")
+            # print("Valid user input. Proceed...")
+            action_handler = ActionHandler(self.image_file, self.output_directory, self.selected_action, self.selected_algorithm, self.key)
+            if self.selected_action == "encrypt":
+                action_handler.handle_encryption()
+            elif self.selected_action == "decrypt":
+                action_handler.handle_decryption()
         
 
-        print("handle_execute() fucnction called with", self.selected_action, self.selected_algorithm)
-        print(self.key)
+        # print("handle_execute() fucnction called with", self.selected_action, self.selected_algorithm)
+        # print(self.key)

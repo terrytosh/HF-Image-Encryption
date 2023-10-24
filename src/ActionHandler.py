@@ -5,3 +5,10 @@ class ActionHandler:
         self.action = action
         self.algorithm = algorithm
         self.key = key
+        print("ActionHandler variables:", self.selected_image_file, self.output_directory, self.action, self.algorithm, self.key)
+    
+    def handle_encryption(self):
+        print("Handling encryption with", self.algorithm)
+    
+    def handle_decryption(self):
+        print("Handling decryption with", self.algorithm)
