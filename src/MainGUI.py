@@ -57,19 +57,26 @@ class MainGUI(QMainWindow):
         selected_algorithm = ""
         key = self.password_input.text()
 
-        # Handle selected action input
+        # Handle action selection
         if self.encrypt_radio_button.isChecked():
             selected_action = "encrypt"
         elif self.decrypt_radio_button.isChecked():
             selected_action = "decrypt"
         
-        # Handle selected algorithm input
+        # Handle algorithm selection
         if self.algo1_radio_button.isChecked():
             selected_algorithm = "algo1"
         elif self.algo2_radio_button.isChecked():
             selected_algorithm = "algo2"
         elif self.algo3_radio_button.isChecked():
             selected_algorithm = "algo3"
+
+        # Check for valid user input
+        if self.image_file == "" or self.output_directory == "" or selected_action == "" or selected_algorithm == "" or key == "":
+            QMessageBox.warning(self, "Error!", "Please fill in all form inputs.")
+        else:
+            # Handle action
+            print("Valid user input. Proceed...")
         
 
         print("handle_execute() fucnction called with", selected_action, selected_algorithm)
