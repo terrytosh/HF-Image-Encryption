@@ -33,4 +33,24 @@ class MainGUI(QMainWindow):
     
     # TODO: Implement this function
     def handle_execute(self):
-        print("handle_execute() fucnction called...")
+
+        # Store user action selections from UI radio buttons
+        selected_action = ""
+        selected_algorithm = ""
+
+        # Handle selected action input
+        if self.encrypt_radio_button.isChecked():
+            selected_action = "encrypt"
+        elif self.decrypt_radio_button.isChecked():
+            selected_action = "decrypt"
+        
+        # Handle selected algorithm input
+        if self.algo1_radio_button.isChecked():
+            selected_algorithm = "algo1"
+        elif self.algo2_radio_button.isChecked():
+            selected_algorithm = "algo2"
+        elif self.algo3_radio_button.isChecked():
+            selected_algorithm = "algo3"
+        
+
+        print("handle_execute() fucnction called with", selected_action, selected_algorithm)
