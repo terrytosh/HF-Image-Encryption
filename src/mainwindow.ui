@@ -6,24 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>557</width>
-    <height>638</height>
+    <width>750</width>
+    <height>806</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>900</width>
+    <height>900</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(225, 225, 225);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(198, 198, 198);</string>
+    <string notr="true">background-color: rgb(225, 225, 225);</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QFrame" name="frame">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(225, 225, 225);
-border-radius: 8px;
-</string>
+border-radius: 2px solid black;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -34,6 +42,12 @@ border-radius: 8px;
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Select Action:</string>
          </property>
@@ -41,6 +55,12 @@ border-radius: 8px;
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Encrypt</string>
          </property>
@@ -48,12 +68,29 @@ border-radius: 8px;
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_2">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Decrypt</string>
          </property>
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+background-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
      </widget>
     </item>
     <item>
@@ -72,6 +109,12 @@ border-radius: 8px;
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Select Algorithm:</string>
          </property>
@@ -79,6 +122,12 @@ border-radius: 8px;
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_3">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Algo 1</string>
          </property>
@@ -86,6 +135,12 @@ border-radius: 8px;
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_4">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Algo 2</string>
          </property>
@@ -93,12 +148,29 @@ border-radius: 8px;
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton_5">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Algo 3</string>
          </property>
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="Line" name="line_2">
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+background-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
      </widget>
     </item>
     <item>
@@ -116,6 +188,12 @@ border-radius: 8px;</string>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Password:</string>
          </property>
@@ -139,6 +217,17 @@ border-radius: 2px;</string>
      </widget>
     </item>
     <item>
+     <widget class="Line" name="line_3">
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+background-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QFrame" name="frame_4">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(225, 225, 225);
@@ -153,17 +242,29 @@ border-radius: 8px;</string>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="1">
         <widget class="QLabel" name="label_4">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 2px;</string>
          </property>
          <property name="text">
-          <string>No File Currently Selected...</string>
+          <string>No input file selected...</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QPushButton" name="pushButton">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
          <property name="focusPolicy">
           <enum>Qt::StrongFocus</enum>
          </property>
@@ -175,7 +276,7 @@ border-radius: 2px;</string>
 border-radius: 2px;</string>
          </property>
          <property name="text">
-          <string>Click to Select Input File:</string>
+          <string>Click to Select</string>
          </property>
          <property name="default">
           <bool>false</bool>
@@ -187,27 +288,50 @@ border-radius: 2px;</string>
        </item>
        <item row="1" column="0">
         <widget class="QPushButton" name="pushButton_2">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>13</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 2px;</string>
          </property>
          <property name="text">
-          <string>Click to Select Output Directory:</string>
+          <string>Click to Select</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLabel" name="label_5">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 2px;</string>
          </property>
          <property name="text">
-          <string>No Output Directory Selected...</string>
+          <string>No output directory selected...</string>
          </property>
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="Line" name="line_4">
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid black;
+background-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
      </widget>
     </item>
     <item>
@@ -225,6 +349,12 @@ border-radius: 8px;</string>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
         <widget class="QPushButton" name="pushButton_3">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 2px;</string>
@@ -244,12 +374,24 @@ border-radius: 2px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>557</width>
+     <width>750</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionClose"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -5,8 +5,8 @@ class MainGUI(QMainWindow):
     def __init__(self):
         super(MainGUI, self).__init__()
     
-        # Load 'testgui.ui' UI from 'src'
-        uic.loadUi("src/testgui.ui", self)
+        # Load UI from 'src'
+        uic.loadUi("src/mainwindow.ui", self)
 
-        # Display 'testgui.ui'
+        # Display UI
         self.show()
