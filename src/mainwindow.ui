@@ -12,8 +12,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>900</width>
-    <height>900</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -129,7 +129,7 @@ border-radius: 8px;
           </font>
          </property>
          <property name="text">
-          <string>Algo 1</string>
+          <string>XOR</string>
          </property>
         </widget>
        </item>
@@ -142,7 +142,7 @@ border-radius: 8px;
           </font>
          </property>
          <property name="text">
-          <string>Algo 2</string>
+          <string>Pixel Shuffling</string>
          </property>
         </widget>
        </item>
@@ -155,7 +155,7 @@ border-radius: 8px;
           </font>
          </property>
          <property name="text">
-          <string>Algo 3</string>
+          <string>Algo3</string>
          </property>
         </widget>
        </item>

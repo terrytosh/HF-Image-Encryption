@@ -64,9 +64,9 @@ class MainGUI(QMainWindow):
         
         # Handle algorithm selection
         if self.algo1_radio_button.isChecked():
-            self.selected_algorithm = "algo1"
+            self.selected_algorithm = "xor"
         elif self.algo2_radio_button.isChecked():
-            self.selected_algorithm = "algo2"
+            self.selected_algorithm = "pixel_shuffling"
         elif self.algo3_radio_button.isChecked():
             self.selected_algorithm = "algo3"
 
