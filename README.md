@@ -3,12 +3,12 @@ Project Repository for Human Factors Group 13
 
 ## Create Developement Environment:
 
-First, you will need to install miniconda [here](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html) is the installation guide
+First, you will need to install miniconda. [Here](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html) is the installation guide
 with download links. Once miniconda is installed, run the 'Anaconda Prompt'.
 
 Then, create a new python environment using:
 ```bash
-conda create --name env_name python=3.11.6
+conda create --name env_name python=3.11.4
 ```
 
 Activate the environment with:
@@ -20,7 +20,7 @@ Once the environment is activate, it should switch you into that environment. Th
 can be seen by (base) changing to (env_name), where 'env_name' is what you named the 
 environment when creating it with the above commands. Now in the newly created environment,
 use the pip install commands outlined below to install necessary Python libraries. You will
-need to switch into this envrionment in your desired IDE as well.
+need to switch into this environment in your desired IDE as well.
 
 ## Requirements:
 
