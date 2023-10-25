@@ -31,6 +31,11 @@ PyQt5 - 5.19.9
 pip install PyQt5
 ```
 
+Pillow - 10.1.0
+```bash
+pip install Pillow
+```
+
 ## Current Techniques Implemented:
 
-- TODO
+- XOR (In progress)
