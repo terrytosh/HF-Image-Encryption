@@ -10,13 +10,19 @@ class Xor:
         image = Image.open(self.image_file)
         pixel_data = list(image.getdata())
         encrypted_pixel_data = []
+        byte_key = self.key.encode()
 
-        byte_key = 0xAA
+        if len(self.key) < len(pixel_data):
+            byte_key = (byte_key * (len(pixel_data) // len(byte_key) + 1))[:len(pixel_data)]
+        
+        byte_key = [byte for byte in byte_key]
+
+        # byte_key = 0xAA
 
         for pixel in pixel_data:
             encrypted_pixel = []
-            for byte in pixel:
-                encrypted_byte = byte ^ byte_key
+            for byte, key_byte in zip(pixel, byte_key):
+                encrypted_byte = byte ^ key_byte
                 encrypted_pixel.append(encrypted_byte)
             encrypted_pixel_data.append(tuple(encrypted_pixel))
         
