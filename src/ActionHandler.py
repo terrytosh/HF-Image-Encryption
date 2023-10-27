@@ -17,4 +17,6 @@ class ActionHandler:
             xor.encrypt()
     
     def handle_decryption(self):
-        print("Handling decryption with", self.algorithm)
+        if self.algorithm == "xor":
+            xor = Xor(self.selected_image_file, self.output_directory, self.key)
+            xor.decrypt()
