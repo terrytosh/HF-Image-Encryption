@@ -1,4 +1,6 @@
 from PIL import Image
+import hashlib
+import os
 
 class Xor:
     def __init__(self, image_file, output_directory, key):
@@ -10,18 +12,16 @@ class Xor:
         image = Image.open(self.image_file)
         pixel_data = list(image.getdata())
         encrypted_pixel_data = []
-        byte_key = self.key.encode()
 
-        if len(self.key) < len(pixel_data):
-            byte_key = (byte_key * (len(pixel_data) // len(byte_key) + 1))[:len(pixel_data)]
-        
-        byte_key = [byte for byte in byte_key]
+        salt = os.urandom(16)
+        print("Salt: ", salt)
 
-        # byte_key = 0xAA
+        key_length = len(pixel_data)
+        derived_key = hashlib.pbkdf2_hmac('sha256', self.key.encode(), salt, 100, key_length)
 
         for pixel in pixel_data:
             encrypted_pixel = []
-            for byte, key_byte in zip(pixel, byte_key):
+            for byte, key_byte in zip(pixel, derived_key):
                 encrypted_byte = byte ^ key_byte
                 encrypted_pixel.append(encrypted_byte)
             encrypted_pixel_data.append(tuple(encrypted_pixel))
