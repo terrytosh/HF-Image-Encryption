@@ -155,7 +155,7 @@ border-radius: 8px;
           </font>
          </property>
          <property name="text">
-          <string>Algo3</string>
+          <string>AES</string>
          </property>
         </widget>
        </item>

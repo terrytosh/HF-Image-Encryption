@@ -68,7 +68,7 @@ class MainGUI(QMainWindow):
         elif self.algo2_radio_button.isChecked():
             self.selected_algorithm = "pixel_shuffling"
         elif self.algo3_radio_button.isChecked():
-            self.selected_algorithm = "algo3"
+            self.selected_algorithm = "AES"
 
         # Check for valid user input
         if self.image_file == "" or self.output_directory == "" or self.selected_action == "" or self.selected_algorithm == "" or self.key == "":
