@@ -1,4 +1,5 @@
 from PIL import Image
+from PIL.ExifTags import TAGS
 import hashlib
 import os
 
@@ -29,12 +30,14 @@ class Xor:
         # Create a new image with the encrypted pixel data
         encrypted_image = Image.new(image.mode, image.size)
         encrypted_image.putdata(encrypted_pixel_data)
-        
-        encrypted_image.info['user_salt'] = salt
-        print(encrypted_image.info['user_salt'])
 
         # Save the encrypted image
-        encrypted_image.save("\\Users\\16825\\Pictures\\Encrypted\\encrypted_image.png")
+        # Set custom metadata with the salt
+        exif_data = image.info.copy()  # Copy existing metadata
+        exif_data['user_salt'] = salt  # Add the salt to metadata
+
+        # Save the encrypted image
+        encrypted_image.save("\\Users\\16825\\Pictures\\Encrypted\\encrypted_image.png", exif=exif_data)
 
         image.close()
         encrypted_image.close()
