@@ -26,6 +26,7 @@ class MainGUI(QMainWindow):
 
         # Initialize instance variables
         self.image_file = ""
+        self.output_file = ""
         self.output_directory = ""
         self.selected_action = ""
         self.selected_algorithm = ""
@@ -55,6 +56,7 @@ class MainGUI(QMainWindow):
     def handle_execute(self):
 
         self.key = self.password_input.text()
+        self.output_file = self.output_file_name_input.text()
 
         # Handle action selection
         if self.encrypt_radio_button.isChecked():
@@ -63,25 +65,23 @@ class MainGUI(QMainWindow):
             self.selected_action = "decrypt"
         
         # Handle algorithm selection
-        if self.algo1_radio_button.isChecked():
+        if self.xor_radio_button.isChecked():
             self.selected_algorithm = "xor"
-        elif self.algo2_radio_button.isChecked():
+        elif self.pixel_shuffling_radio_button.isChecked():
             self.selected_algorithm = "pixel_shuffling"
-        elif self.algo3_radio_button.isChecked():
-            self.selected_algorithm = "AES"
+        elif self.aes_radio_button.isChecked():
+            self.selected_algorithm = "aes"
+        elif self.rsa_radio_button.isChecked():
+            self.selected_algorithm = "rsa"
+        elif self.des_radio_button.isChecked():
+            self.selected_algorithm = "des"
 
         # Check for valid user input
-        if self.image_file == "" or self.output_directory == "" or self.selected_action == "" or self.selected_algorithm == "" or self.key == "":
+        if self.image_file == "" or self.output_directory == "" or self.selected_action == "" or self.selected_algorithm == "" or self.key == "" or self.output_file == "":
             QMessageBox.warning(self, "Error!", "Please fill in all form inputs.")
         else:
-            # Handle action
-            # print("Valid user input. Proceed...")
-            action_handler = ActionHandler(self.image_file, self.output_directory, self.selected_action, self.selected_algorithm, self.key)
+            action_handler = ActionHandler(self.image_file, self.output_directory, self.selected_action, self.selected_algorithm, self.key, self.output_file)
             if self.selected_action == "encrypt":
                 action_handler.handle_encryption()
             elif self.selected_action == "decrypt":
                 action_handler.handle_decryption()
-        
-
-        # print("handle_execute() fucnction called with", self.selected_action, self.selected_algorithm)
-        # print(self.key)
