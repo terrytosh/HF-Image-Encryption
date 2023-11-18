@@ -39,3 +39,7 @@ pip install Pillow
 ## Current Techniques Implemented:
 
 - XOR (In progress)
+- Pixel Shuffling (In progress)
+- AES (In progress)
+- RSA (In progress)
+- 3DES (In progress)
