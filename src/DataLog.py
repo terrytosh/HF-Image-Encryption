@@ -10,9 +10,11 @@ class DataLog:
         self.output_dir = output_dir
         self.output_file = output_file
         self.data_log_entry = ""
-        self.data_log_file_path = "datalog.txt"
-        # # Create the directory if it doesn't exist
-        # os.makedirs(os.path.dirname(self.data_log_file_path), exist_ok=True)
+
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.data_log_file_path = os.path.join(script_dir, '..', 'UserDataLog', 'datalog.txt')
+        # Create the directory if it doesn't exist
+        os.makedirs(os.path.dirname(self.data_log_file_path), exist_ok=True)
     
     def build_data_log_entry(self):
         current_datetime = datetime.now()
@@ -25,10 +27,11 @@ class DataLog:
         if (self.action == "Decryption"):
             action = "decrypted"
 
-        self.data_log_entry += file_name + " " + action + " with " + self.algorithm + " saved as " + self.output_file + " to " + self.output_dir + " on " + formatted_date_time
+        self.data_log_entry += file_name + " " + action + " with " + self.algorithm + ". Saved as " + self.output_file + " to " + self.output_dir + " on " + formatted_date_time
 
     def write_entry_to_file(self):
         self.build_data_log_entry()
+        print(self.data_log_file_path)
         print(self.data_log_entry)
         try:
             with open(self.data_log_file_path, 'a') as file:

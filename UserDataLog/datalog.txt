@@ -1,0 +1,2 @@
+champloo.JPG encrypted with XOR. Saved as encrypted_champloo to C:/Users/16825/Pictures/Encrypted on 2023-11-18 07:35:29
+encrypted_champloo.JPG decrypted with XOR. Saved as decrypted_champloo to C:/Users/16825/Pictures/Decrypted on 2023-11-18 07:35:53
