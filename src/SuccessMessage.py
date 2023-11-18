@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QMessageBox
+from PyQt5.QtWidgets import QMessageBox
 
 class SuccessMessage:
     def __init__(self, algorithm, action):

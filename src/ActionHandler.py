@@ -1,5 +1,6 @@
 from Xor import Xor
 from SuccessMessage import SuccessMessage
+from DataLog import DataLog
 
 class ActionHandler:
     def __init__(self, image_file, output_directory, action, algorithm, key, output_file):
@@ -10,6 +11,7 @@ class ActionHandler:
         self.key = key
         self.output_file = output_file
         self.success_msg = SuccessMessage(algorithm, action)
+        self.data_log = DataLog(image_file, action, algorithm, output_directory, output_file)
         # print("ActionHandler variables:", self.selected_image_file, self.output_directory, self.action, self.algorithm, self.key, self.output_file)
     
     def handle_encryption(self):
@@ -19,9 +21,13 @@ class ActionHandler:
             xor = Xor(self.selected_image_file, self.output_directory, self.key, self.output_file)
             xor.encrypt()
             self.success_msg.show_success_message()
+        
+        self.data_log.write_entry_to_file()
     
     def handle_decryption(self):
         if self.algorithm == "XOR":
             xor = Xor(self.selected_image_file, self.output_directory, self.key, self.output_file)
             xor.decrypt()
             self.success_msg.show_success_message()
+        
+        self.data_log.write_entry_to_file()
