@@ -61,7 +61,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Encrypt</string>
+          <string>Encryption</string>
          </property>
         </widget>
        </item>
@@ -74,7 +74,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Decrypt</string>
+          <string>Decryption</string>
          </property>
         </widget>
        </item>

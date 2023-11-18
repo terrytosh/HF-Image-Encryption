@@ -1,5 +1,4 @@
 from PIL import Image
-from PIL.ExifTags import TAGS
 import hashlib
 import os
 
@@ -14,7 +13,6 @@ class Xor:
         # Split the file path into the root and extension
         root, extension = os.path.splitext(file_path)
         # Return the extension (including the dot)
-        print(extension)
         return extension
 
     def encrypt(self):
@@ -44,7 +42,7 @@ class Xor:
         # Save the encrypted image
         encrypted_image.save(os.path.join(self.output_directory, self.output_file))
 
-        print(self.output_directory)
+        # print(self.output_directory)
 
         image.close()
         encrypted_image.close()

@@ -60,28 +60,28 @@ class MainGUI(QMainWindow):
 
         # Handle action selection
         if self.encrypt_radio_button.isChecked():
-            self.selected_action = "encrypt"
+            self.selected_action = "Encryption"
         elif self.decrypt_radio_button.isChecked():
-            self.selected_action = "decrypt"
+            self.selected_action = "Decryption"
         
         # Handle algorithm selection
         if self.xor_radio_button.isChecked():
-            self.selected_algorithm = "xor"
+            self.selected_algorithm = "XOR"
         elif self.pixel_shuffling_radio_button.isChecked():
-            self.selected_algorithm = "pixel_shuffling"
+            self.selected_algorithm = "Pixel Shuffling"
         elif self.aes_radio_button.isChecked():
-            self.selected_algorithm = "aes"
+            self.selected_algorithm = "AES"
         elif self.rsa_radio_button.isChecked():
-            self.selected_algorithm = "rsa"
+            self.selected_algorithm = "RSA"
         elif self.des_radio_button.isChecked():
-            self.selected_algorithm = "des"
+            self.selected_algorithm = "3DES"
 
         # Check for valid user input
         if self.image_file == "" or self.output_directory == "" or self.selected_action == "" or self.selected_algorithm == "" or self.key == "" or self.output_file == "":
             QMessageBox.warning(self, "Error!", "Please fill in all form inputs.")
         else:
             action_handler = ActionHandler(self.image_file, self.output_directory, self.selected_action, self.selected_algorithm, self.key, self.output_file)
-            if self.selected_action == "encrypt":
+            if self.selected_action == "Encryption":
                 action_handler.handle_encryption()
-            elif self.selected_action == "decrypt":
+            elif self.selected_action == "Decryption":
                 action_handler.handle_decryption()
