@@ -10,27 +10,36 @@ class Xor:
         self.output_file = output_file
     
     def get_file_extension(self, file_path):
-        # Split the file path into the root and extension
         root, extension = os.path.splitext(file_path)
-        # Return the extension (including the dot)
         return extension
 
     def encrypt(self):
         image = Image.open(self.image_file)
         pixel_data = list(image.getdata())
-        encrypted_pixel_data = []
+
+        print("Original Pixel:", pixel_data[0])
+        print("Original Pixel:", pixel_data[1])
 
         salt = b'\xe2\xa1\x14\xfd\x07\x99A\xa3\xe4\xfc?\xcft(\xf4w'
-
         key_length = len(pixel_data)
         derived_key = hashlib.pbkdf2_hmac('sha256', self.key.encode(), salt, 100, key_length)
 
-        for pixel in pixel_data:
-            encrypted_pixel = []
-            for byte, key_byte in zip(pixel, derived_key):
-                encrypted_byte = byte ^ key_byte
-                encrypted_pixel.append(encrypted_byte)
-            encrypted_pixel_data.append(tuple(encrypted_pixel))
+        # print("Pixel Data Length: ", len(pixel_data))
+        # print("Derived Key Length: ", len(derived_key))
+        # print(type(derived_key))
+
+        encrypted_pixel_data = []
+
+        for pixel, byte_char in zip(pixel_data, derived_key):
+            red, green, blue = pixel
+            byte_value = int(byte_char)
+            red ^= 22
+            green ^= 22
+            blue ^= 22
+            encrypted_pixel_data.append((red, green, blue))
+        
+        print("Encrypted Pixel:", encrypted_pixel_data[0])
+        print("Encrypted Pixel:", encrypted_pixel_data[1])
         
         # Create a new image with the encrypted pixel data
         encrypted_image = Image.new(image.mode, image.size)
@@ -42,27 +51,32 @@ class Xor:
         # Save the encrypted image
         encrypted_image.save(os.path.join(self.output_directory, self.output_file))
 
-        # print(self.output_directory)
-
         image.close()
         encrypted_image.close()
     
     def decrypt(self):
         image = Image.open(self.image_file)
         pixel_data = list(image.getdata())
-        decrypted_pixel_data = []
 
         salt = b'\xe2\xa1\x14\xfd\x07\x99A\xa3\xe4\xfc?\xcft(\xf4w'
-
         key_length = len(pixel_data)
         derived_key = hashlib.pbkdf2_hmac('sha256', self.key.encode(), salt, 100, key_length)
 
-        for pixel in pixel_data:
-            decrypted_pixel = []
-            for byte, key_byte in zip(pixel, derived_key):
-                decrypted_byte = byte ^ key_byte
-                decrypted_pixel.append(decrypted_byte)
-            decrypted_pixel_data.append(tuple(decrypted_pixel))
+        decrypted_pixel_data = []
+
+        print("Loading in Encrypted Pixel:", pixel_data[0])
+        print("Loading in Encrypted Pixel:", pixel_data[1])
+
+        for pixel, byte_char in zip(pixel_data, derived_key):
+            red, green, blue = pixel
+            byte_value = int(byte_char)
+            red ^= 22
+            green ^= 22
+            blue ^= 22
+            decrypted_pixel_data.append((red, green, blue))
+
+        print("Decrypted Pixel:", decrypted_pixel_data[0])
+        print("Decrypted Pixel:", decrypted_pixel_data[1])
         
         # Create a new image with the decrypted pixel data
         decrypted_image = Image.new(image.mode, image.size)

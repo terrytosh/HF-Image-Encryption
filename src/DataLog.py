@@ -31,8 +31,6 @@ class DataLog:
 
     def write_entry_to_file(self):
         self.build_data_log_entry()
-        print(self.data_log_file_path)
-        print(self.data_log_entry)
         try:
             with open(self.data_log_file_path, 'a') as file:
                 file.write(self.data_log_entry + '\n')
