@@ -1,2 +1,2 @@
-bebop.JPG encrypted with XOR. Saved as encr to C:/Users/16825/Pictures/Encrypted on 2023-11-27 04:21:33
-encr.JPG decrypted with XOR. Saved as decr to C:/Users/16825/Pictures/Encrypted on 2023-11-27 04:22:13
+champloo.JPG encrypted with Pixel Shuffling. Saved as ps to C:/Users/16825/Pictures/Encrypted on 2023-12-03 01:21:12
+ps.JPG decrypted with Pixel Shuffling. Saved as dec to C:/Users/16825/Pictures/Encrypted on 2023-12-03 01:22:19

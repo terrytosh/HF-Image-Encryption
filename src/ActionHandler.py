@@ -1,4 +1,5 @@
 from Xor import Xor
+from PixelShuffler import PixelShuffler
 from SuccessMessage import SuccessMessage
 from DataLog import DataLog
 
@@ -21,6 +22,10 @@ class ActionHandler:
             xor = Xor(self.selected_image_file, self.output_directory, self.key, self.output_file)
             xor.encrypt()
             self.success_msg.show_success_message()
+        elif self.algorithm == "Pixel Shuffling":
+            ps = PixelShuffler(self.selected_image_file, self.output_directory, self.key, self.output_file)
+            ps.shuffle()
+            self.success_msg.show_success_message()
         
         self.data_log.write_entry_to_file()
     
@@ -28,6 +33,10 @@ class ActionHandler:
         if self.algorithm == "XOR":
             xor = Xor(self.selected_image_file, self.output_directory, self.key, self.output_file)
             xor.decrypt()
+            self.success_msg.show_success_message()
+        elif self.algorithm == "Pixel Shuffling":
+            ps = PixelShuffler(self.selected_image_file, self.output_directory, self.key, self.output_file)
+            ps.unshuffle()
             self.success_msg.show_success_message()
         
         self.data_log.write_entry_to_file()
