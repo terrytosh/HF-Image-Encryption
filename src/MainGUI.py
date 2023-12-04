@@ -36,7 +36,7 @@ class MainGUI(QMainWindow):
         # print("handle_input_file_select() fucnction called...")
 
         options = QFileDialog.ReadOnly # Force user to only selected already exisitng files
-        file_filter = "Images (*.jpg *.png)" # User can only select .jpg and .png file types
+        file_filter = "Images (*.jpg *.png *.enc)" # User can only select .jpg and .png file types
 
         # Store path of selected image file
         self.image_file, _ = QFileDialog.getOpenFileName(self, "Select Image File", "", file_filter, options=options)

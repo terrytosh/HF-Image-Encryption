@@ -1,4 +1,5 @@
 from Xor import Xor
+from AES_picture import AES_picture
 from SuccessMessage import SuccessMessage
 from DataLog import DataLog
 
@@ -21,6 +22,11 @@ class ActionHandler:
             xor = Xor(self.selected_image_file, self.output_directory, self.key, self.output_file)
             xor.encrypt()
             self.success_msg.show_success_message()
+
+        if self.algorithm == "AES":
+            aes = AES_picture(self.selected_image_file, self.output_directory, self.key, self.output_file)
+            aes.encrypt_image()
+            self.success_msg.show_success_message()
         
         self.data_log.write_entry_to_file()
     
@@ -28,6 +34,11 @@ class ActionHandler:
         if self.algorithm == "XOR":
             xor = Xor(self.selected_image_file, self.output_directory, self.key, self.output_file)
             xor.decrypt()
+            self.success_msg.show_success_message()
+
+        if self.algorithm == "AES":
+            aes = AES_picture(self.selected_image_file, self.output_directory, self.key, self.output_file)
+            aes.decrypt_image()
             self.success_msg.show_success_message()
         
         self.data_log.write_entry_to_file()
