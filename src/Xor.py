@@ -17,8 +17,8 @@ class Xor:
         image = Image.open(self.image_file)
         pixel_data = list(image.getdata())
 
-        print("Original Pixel:", pixel_data[0])
-        print("Original Pixel:", pixel_data[1])
+        # print("Original Pixel:", pixel_data[0])
+        # print("Original Pixel:", pixel_data[1])
 
         salt = b'\xe2\xa1\x14\xfd\x07\x99A\xa3\xe4\xfc?\xcft(\xf4w'
         key_length = len(pixel_data)
@@ -33,13 +33,13 @@ class Xor:
         for pixel, byte_char in zip(pixel_data, derived_key):
             red, green, blue = pixel
             byte_value = int(byte_char)
-            red ^= 22
-            green ^= 22
-            blue ^= 22
+            red ^= byte_value
+            green ^= byte_value
+            blue ^= byte_value
             encrypted_pixel_data.append((red, green, blue))
         
-        print("Encrypted Pixel:", encrypted_pixel_data[0])
-        print("Encrypted Pixel:", encrypted_pixel_data[1])
+        # print("Encrypted Pixel:", encrypted_pixel_data[0])
+        # print("Encrypted Pixel:", encrypted_pixel_data[1])
         
         # Create a new image with the encrypted pixel data
         encrypted_image = Image.new(image.mode, image.size)
@@ -64,19 +64,19 @@ class Xor:
 
         decrypted_pixel_data = []
 
-        print("Loading in Encrypted Pixel:", pixel_data[0])
-        print("Loading in Encrypted Pixel:", pixel_data[1])
+        # print("Loading in Encrypted Pixel:", pixel_data[0])
+        # print("Loading in Encrypted Pixel:", pixel_data[1])
 
         for pixel, byte_char in zip(pixel_data, derived_key):
             red, green, blue = pixel
             byte_value = int(byte_char)
-            red ^= 22
-            green ^= 22
-            blue ^= 22
+            red ^= byte_value
+            green ^= byte_value
+            blue ^= byte_value
             decrypted_pixel_data.append((red, green, blue))
 
-        print("Decrypted Pixel:", decrypted_pixel_data[0])
-        print("Decrypted Pixel:", decrypted_pixel_data[1])
+        # print("Decrypted Pixel:", decrypted_pixel_data[0])
+        # print("Decrypted Pixel:", decrypted_pixel_data[1])
         
         # Create a new image with the decrypted pixel data
         decrypted_image = Image.new(image.mode, image.size)
