@@ -36,10 +36,15 @@ Pillow - 10.1.0
 pip install Pillow
 ```
 
+Pycryptodome - 3.19.0
+```bash
+pip install pycryptodome
+```
+
 ## Current Techniques Implemented:
 
-- XOR (In progress)
-- Pixel Shuffling (In progress)
-- AES (In progress)
+- XOR
+- Pixel Shuffling
+- AES
 - RSA (In progress)
 - 3DES (In progress)
