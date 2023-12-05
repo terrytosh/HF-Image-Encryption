@@ -29,7 +29,7 @@ class AES_picture:
         enc_file.write(iv)
         enc_file.write(enc_data)
         enc_file.close()
-        print("success")
+        # print("success")
 
     def decrypt_image(self):
         enc_file2 = open(self.image_file, "rb")

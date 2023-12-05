@@ -27,6 +27,7 @@ class ActionHandler:
         if self.algorithm == "AES":
             aes = AES_picture(self.selected_image_file, self.output_directory, self.key, self.output_file)
             aes.encrypt_image()
+            self.success_msg.show_success_message()
         elif self.algorithm == "Pixel Shuffling":
             ps = PixelShuffler(self.selected_image_file, self.output_directory, self.key, self.output_file)
             ps.shuffle()
@@ -43,6 +44,7 @@ class ActionHandler:
         if self.algorithm == "AES":
             aes = AES_picture(self.selected_image_file, self.output_directory, self.key, self.output_file)
             aes.decrypt_image()
+            self.success_msg.show_success_message()
         elif self.algorithm == "Pixel Shuffling":
             ps = PixelShuffler(self.selected_image_file, self.output_directory, self.key, self.output_file)
             ps.unshuffle()
