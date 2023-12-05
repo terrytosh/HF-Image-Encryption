@@ -41,6 +41,11 @@ Pycryptodome - 3.19.0
 pip install pycryptodome
 ```
 
+Pycryptodomex - 3.19.0
+```bash
+pip install pycryptodomex
+```
+
 ## Current Techniques Implemented:
 
 - XOR
